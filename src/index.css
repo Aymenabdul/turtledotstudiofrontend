@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #eef2f7;
+    color: #1e293b;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+    min-height: 100vh;
+    selection-background-color: rgba(217, 119, 6, 0.2);
+    selection-color: #78350f;
+  }
+}
+
+/* Custom Scrollbars in Sleek Frosted Slate */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(203, 213, 225, 0.9);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.9);
+}
+
+/* ==========================================================================
+   Neu-Glassmorphism (Neumorphic Dual Shadows + Frosted Glassmorphism)
+   Unified Core Design System
+   ========================================================================== */
+
+/* Universal Neu-Glass Panel */
+.glass-panel,
+.neu-glass-panel {
+  background: rgba(255, 255, 255, 0.68) !important;
+  backdrop-filter: blur(20px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.82) !important;
+  box-shadow: 
+    8px 8px 24px rgba(166, 178, 197, 0.42), 
+    -8px -8px 24px rgba(255, 255, 255, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Universal Neu-Glass Card */
+.glass-card,
+.neu-glass-card {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(16px) saturate(170%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(170%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.88) !important;
+  box-shadow: 
+    6px 6px 18px rgba(166, 178, 197, 0.36), 
+    -6px -6px 18px rgba(255, 255, 255, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.85) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover,
+.neu-glass-card:hover {
+  background: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 
+    10px 10px 28px rgba(166, 178, 197, 0.45), 
+    -10px -10px 28px rgba(255, 255, 255, 1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+  transform: translateY(-2px);
+}
+
+/* Sunken / Inset Neu-Glass Wells */
+.neu-glass-inset {
+  background: rgba(235, 240, 248, 0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow: 
+    inset 4px 4px 10px rgba(166, 178, 197, 0.42), 
+    inset -4px -4px 10px rgba(255, 255, 255, 0.95) !important;
+}
+
+.neu-glass-inset-sm {
+  background: rgba(235, 240, 248, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  box-shadow: 
+    inset 2px 2px 6px rgba(166, 178, 197, 0.38), 
+    inset -2px -2px 6px rgba(255, 255, 255, 0.92) !important;
+}
+
+.neu-glass-inset-xs {
+  background: rgba(235, 240, 248, 0.45) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+  box-shadow: 
+    inset 1px 1px 3px rgba(166, 178, 197, 0.32), 
+    inset -1px -1px 3px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Tactile Neu-Glass Buttons */
+.neu-glass-btn {
+  background: rgba(255, 255, 255, 0.72) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 
+    4px 4px 12px rgba(166, 178, 197, 0.38), 
+    -4px -4px 12px rgba(255, 255, 255, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 
+    6px 6px 16px rgba(166, 178, 197, 0.45), 
+    -6px -6px 16px rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px);
+}
+
+.neu-glass-btn:active {
+  background: rgba(235, 240, 248, 0.65) !important;
+  box-shadow: 
+    inset 3px 3px 6px rgba(166, 178, 197, 0.42), 
+    inset -3px -3px 6px rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(1px);
+}
+
+/* Primary Amber Neu-Glass Button */
+.neu-glass-btn-primary {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 
+    0 4px 14px rgba(217, 119, 6, 0.28), 
+    -3px -3px 10px rgba(255, 255, 255, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.55) !important;
+  color: #ffffff !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-glass-btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%) !important;
+  box-shadow: 
+    0 6px 18px rgba(217, 119, 6, 0.36), 
+    -4px -4px 12px rgba(255, 255, 255, 1) !important;
+  transform: translateY(-1px);
+}
+
+.neu-glass-btn-primary:active {
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.35) !important;
+  transform: translateY(1px);
+}
+
+/* Pills & Tags */
+.neu-glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 
+    inset 1px 1px 3px rgba(166, 178, 197, 0.3), 
+    inset -1px -1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.neu-glass-pill.active,
+.neu-glass-pill-active {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.95), rgba(180, 83, 9, 0.95)) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(251, 191, 36, 0.7) !important;
+  box-shadow: 
+    2px 2px 8px rgba(180, 83, 9, 0.35),
+    -1px -1px 4px rgba(255, 255, 255, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Sunken Neu-Glass Inputs, Selects, and Textareas */
+.neu-glass-input,
+input[type="text"]:not([class*="bg-transparent"]), 
+input[type="email"]:not([class*="bg-transparent"]), 
+input[type="password"]:not([class*="bg-transparent"]), 
+input[type="number"]:not([class*="bg-transparent"]), 
+input[type="date"]:not([class*="bg-transparent"]), 
+select:not([class*="bg-transparent"]),
+textarea:not([class*="bg-transparent"]) {
+  border-radius: 1rem !important;
+  background-color: rgba(235, 240, 248, 0.55) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: inset 2px 2px 5px rgba(166, 178, 197, 0.32), inset -2px -2px 5px rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+input[type="number"]:focus, 
+input[type="date"]:focus, 
+textarea:focus {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(217, 119, 6, 0.6) !important;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15), inset 1px 1px 3px rgba(166, 178, 197, 0.2) !important;
+  outline: none !important;
+}
+
+/* Neu-Glass Data Tables */
+table thead tr {
+  background: rgba(235, 240, 248, 0.75) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8) !important;
+}
+
+table tbody tr {
+  transition: background-color 0.15s ease;
+}
+
+table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Dialog and Modal Overlays */
+.fixed.inset-0.bg-black\/50,
+.fixed.inset-0.bg-stone-900\/50,
+.fixed.inset-0.bg-stone-900\/60 {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* ==========================================================================
+   DRM & Content Protection Rules
+   Restricting Screenshots, Screen Recording, Printing, & Direct Media Extraction
+   ========================================================================== */
+
+/* 1. Global Print Protection: Prevents "Print to PDF" or physical printing */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    background: #000000 !important;
+  }
+  
+  body::before {
+    content: "TURTLEDOT STUDIO CONTENT PROTECTION — Printing, exporting, or saving to PDF is strictly prohibited for copyrighted gallery media.";
+    display: block !important;
+    visibility: visible !important;
+    font-size: 22pt;
+    font-weight: bold;
+    text-align: center;
+    padding: 100px 40px;
+    color: #92400e;
+    background: #ffffff;
+  }
+}
+
+/* 2. Disabling selection, drag, and callouts on protected media */
+.drm-protected {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+.drm-protected img,
+.drm-protected video,
+.drm-media {
+  -webkit-user-drag: none !important;
+  -khtml-user-drag: none !important;
+  -moz-user-drag: none !important;
+  -o-user-drag: none !important;
+  user-drag: none !important;
+  -webkit-touch-callout: none !important;
+}
